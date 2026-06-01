@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Fest Halifax — Sponsorship Letter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── Page Setup ── */
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.55;
+      color: #1a1208;
+      background: #fff;
+      width: 8.5in;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      overflow: hidden;
+      padding: 0.4in 0.7in 0.35in 0.7in;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header / Letterhead ── */
+    .letterhead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.12in;
+      border-bottom: 2.5pt solid #d4af37;
+      margin-bottom: 0.04in;
+    }
+
+    .letterhead-logo {
+      height: 56pt;
+      width: auto;
+    }
+
+    .letterhead-info {
+      text-align: right;
+    }
+
+    .letterhead-info .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14pt;
+      font-weight: 700;
+      color: #0a0806;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 3pt;
+    }
+
+    .letterhead-info .brand-name span {
+      color: #d4af37;
+    }
+
+    .letterhead-info p {
+      font-size: 7.5pt;
+      color: #6b5d4e;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+
+    /* Gold rule under header */
+    .gold-rule {
+      width: 100%;
+      height: 0.5pt;
+      background: linear-gradient(90deg, #d4af37, #e09830, transparent);
+      margin-bottom: 0.12in;
+    }
+
+    /* ── Date & Address ── */
+    .meta-block {
+      margin-bottom: 0.1in;
+    }
+
+    .meta-block .date {
+      font-size: 8.5pt;
+      color: #6b5d4e;
+      margin-bottom: 0.14in;
+    }
+
+    .meta-block .recipient p {
+      font-size: 9pt;
+      line-height: 1.55;
+      color: #1a1208;
+    }
+
+    .meta-block .recipient strong {
+      font-weight: 600;
+    }
+
+    /* ── Subject Line ── */
+    .subject-line {
+      font-family: 'Playfair Display', serif;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #0a0806;
+      border-left: 2.5pt solid #d4af37;
+      padding-left: 8pt;
+      margin-bottom: 0.1in;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Body ── */
+    .salutation {
+      margin-bottom: 0.1in;
+      font-size: 9.5pt;
+    }
+
+    .body-text p {
+      margin-bottom: 0.07in;
+      font-size: 8.8pt;
+      color: #1a1208;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* ── Section Heading ── */
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0a0806;
+      margin: 0.08in 0 0.04in 0;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Sponsorship Table ── */
+    .sponsor-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.06in 0 0.08in 0;
+      font-size: 8pt;
+    }
+
+    .sponsor-table thead tr {
+      background: #0a0806;
+      color: #d4af37;
+    }
+
+    .sponsor-table thead th {
+      padding: 6pt 4pt;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 7.5pt;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .sponsor-table thead th:first-child {
+      text-align: left;
+      padding-left: 7pt;
+    }
+
+    .sponsor-table thead th span {
+      display: block;
+      font-size: 6.5pt;
+      color: #a08060;
+      margin-top: 2pt;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .sponsor-table tbody tr {
+      border-bottom: 0.5pt solid #e8ddd0;
+    }
+
+    .sponsor-table tbody tr:nth-child(even) {
+      background: #fdf8f2;
+    }
+
+    .sponsor-table tbody td {
+      padding: 5pt 4pt;
+      color: #1a1208;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .sponsor-table tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #5c3d1e;
+      padding-left: 7pt;
+    }
+
+    /* ── Contact Block ── */
+    .contact-block {
+      background: #fdf8f2;
+      border-left: 2.5pt solid #d4af37;
+      padding: 5pt 9pt;
+      margin: 0.07in 0;
+      font-size: 8.5pt;
+    }
+
+    .contact-block p {
+      line-height: 1.7;
+      color: #1a1208;
+    }
+
+    .contact-block strong {
+      color: #5c3d1e;
+    }
+
+    /* ── Signature ── */
+    .signature-block {
+      margin-top: 0.09in;
+      font-size: 9pt;
+    }
+
+    .signature-block .closing {
+      margin-bottom: 0.16in;
+    }
+
+    .signature-block .sig-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 10pt;
+      color: #0a0806;
+    }
+
+    .signature-block .sig-title {
+      font-size: 8pt;
+      color: #6b5d4e;
+      margin-top: 2pt;
+    }
+
+    /* ── Footer ── */
+    .letter-footer {
+      margin-top: auto;
+      padding-top: 0.08in;
+      border-top: 0.5pt solid #d4af37;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .letter-footer p {
+      font-size: 7pt;
+      color: #a08060;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-bar {
+      width: 30pt;
+      height: 1.5pt;
+      background: #d4af37;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body {
+        width: 8.5in;
+      }
+      .page {
+        page-break-after: avoid;
+      }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    /* ── Screen preview wrapper ── */
+    @media screen {
+      body {
+        background: #e8e0d8;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0.4in 0;
+      }
+      .page {
+        background: #ffffff;
+        box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+      <img src="adobe logo.png" alt="Coffee Fest Halifax" class="letterhead-logo">
+      <div class="letterhead-info">
+        <span class="brand-name">Coffee <span>Fest</span> Halifax</span>
+        <p>Halifax Waterfront, Nova Scotia, Canada</p>
+        <p>coffeefesthalifax.ca</p>
+        <p>info@coffeefesthalifax.ca</p>
+      </div>
+    </div>
+    <div class="gold-rule"></div>
+
+    <!-- DATE & RECIPIENT -->
+    <div class="meta-block">
+      <div class="recipient">
+        <p>Dear Prospective Partner,</p>
+      </div>
+    </div>
+
+    <!-- SUBJECT -->
+    <div class="subject-line">
+      Re: Sponsorship Opportunity &mdash; Coffee Fest Halifax &nbsp;|&nbsp; October 3, 2026
+    </div>
+
+    <!-- BODY -->
+    <div class="body-text">
+
+      <p style="margin-top: 0.07in;">
+        On behalf of Coffee Fest Halifax, we are pleased to extend this invitation to your organization to become an official sponsor of Atlantic Canada's first coffee festival, taking place on October 3, 2026 at the Halifax Waterfront, managed by Build Nova Scotia. Coffee Fest Halifax is produced by the same organizing team behind two of the region's most successful community events &mdash; East Coast Inflate-a-Palooza and Philippine Fiesta &mdash; bringing a proven record of large-scale event execution, community engagement, and sponsorship delivery to everything we undertake.
+      </p>
+
+      <p>
+        Coffee Fest Halifax is a one-day festival experience bringing together twenty of the region's finest artisan roasters, local cafés, bakeries, culinary artists, and coffee enthusiasts from across the Maritimes and beyond. Programming includes live brewing competitions, curated masterclass workshops, culinary pairings, and live performances &mdash; all set against the backdrop of one of the most celebrated waterfronts on the East Coast.
+      </p>
+
+      <div class="section-heading">Why This Opportunity Matters</div>
+
+      <p>
+        The specialty coffee industry represents a significant and rapidly growing consumer market defined by brand loyalty, discernment, and a deep appreciation for quality. Our projected attendance of five thousand guests over the festival weekend will draw a diverse audience of passionate consumers, industry professionals, and destination visitors &mdash; an audience that is educated, engaged, and fiercely brand-conscious.
+      </p>
+
+      <p>
+        Sponsoring Coffee Fest Halifax places your organization within a premium shared experience, activating your brand across the official website and digital channels, a curated subscriber email audience, organic and paid social media campaigns, on-site venue signage, live announcements, and regional media coverage.
+      </p>
+
+      <div class="section-heading">Sponsorship Tiers</div>
+
+      <table class="sponsor-table">
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Bronze<br><span>$1,000 &ndash; $2,500</span></th>
+            <th>Silver<br><span>$2,500 &ndash; $5,000</span></th>
+            <th>Gold<br><span>$5,000 &ndash; $15,000</span></th>
+            <th>Title<br><span>$15,000 &ndash; $30,000</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General Admission Passes</td>
+            <td>5</td>
+            <td>10</td>
+            <td>10</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>VIP Passes (1-hr early access)</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>10</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>Logo on official website</td>
+            <td>&#10003;</td>
+            <td>&#10003;</td>
+            <td>&#10003;</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <td>Dedicated social media features</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>On-site banner placement</td>
+            <td>&mdash;</td>
+            <td>&#10003;</td>
+            <td>&#10003;</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <td>Dedicated booth space</td>
+            <td>&mdash;</td>
+            <td>10x10 tent</td>
+            <td>10x10 tent</td>
+            <td>20x20 tent</td>
+          </tr>
+          <tr>
+            <td>Dedicated email newsletter feature</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&#10003;</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <td>"Presented by" naming rights</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <td>Keynote introduction</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <td>Custom branded experience</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&#10003;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        All tiers are negotiable and may be customized to align with your organization's specific marketing objectives. In-kind sponsorship arrangements are also welcomed for brands able to contribute products, services, or experiences in lieu of a direct financial investment.
+      </p>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="letter-footer">
+      <div class="footer-bar"></div>
+      <p>Coffee Fest Halifax &nbsp;&bull;&nbsp; October 3, 2026 &nbsp;&bull;&nbsp; Halifax Waterfront, Nova Scotia, Canada</p>
+      <div class="footer-bar"></div>
+    </div>
+
+  </div>
+</body>
+</html>

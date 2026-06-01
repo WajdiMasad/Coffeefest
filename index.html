@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Fest Halifax — Coming October 2026 | Nova Scotia's Premier Coffee Festival</title>
+  <meta name="description" content="Nova Scotia's most anticipated coffee festival. Artisan roasters, world-class baristas, live demos, and the finest brews. Coming October 2026 to the Halifax waterfront.">
+  <meta property="og:title" content="Coffee Fest Halifax — October 2026">
+  <meta property="og:description" content="Nova Scotia's most anticipated coffee festival. Artisan roasters, world-class baristas, live demos, and the finest brews.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-bean"></div>
+    <div class="loader-text">Brewing Something Special</div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <img src="images/logo.png" alt="Coffee Fest Halifax" class="nav-logo-img">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#halifax">Halifax</a></li>
+        <li><a href="#signup" class="nav-cta">Get Early Access</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="images/hero-bg.png" alt="Coffee Fest Halifax hero">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-top-fade"></div>
+    
+    <!-- Floating particles -->
+    <div class="hero-particles" id="heroParticles"></div>
+
+    <div class="hero-content">
+      <div class="hero-dateline">Halifax, Nova Scotia</div>
+      
+      <h1 class="hero-title">
+        <span class="line-1">Welcome to</span>
+        <span class="line-2">Coffee Fest</span>
+        <span class="line-3">Halifax</span>
+      </h1>
+
+      <div class="hero-location">
+        Where <span>Atlantic Canada</span> meets world-class coffee culture
+      </div>
+
+      <div class="coming-soon-badge">
+        <span class="pulse"></span>
+        <span>Brewing Soon — October 2026</span>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-value" id="countDays">000</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <span class="countdown-separator">:</span>
+        <div class="countdown-item">
+          <span class="countdown-value" id="countHours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <span class="countdown-separator">:</span>
+        <div class="countdown-item">
+          <span class="countdown-value" id="countMinutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <span class="countdown-separator">:</span>
+        <div class="countdown-item">
+          <span class="countdown-value" id="countSeconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#signup" class="btn btn-gold btn-large">Get Early Access</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll to Explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal">
+          <div class="about-image">
+            <img src="images/coffee-flatlay.png" alt="Artisan coffee craftsmanship">
+          </div>
+          <div class="about-image-accent"></div>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="about-stat-value">50+</span>
+              <span class="about-stat-label">Roasters</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value">1</span>
+              <span class="about-stat-label">Day</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value">20+</span>
+              <span class="about-stat-label">Workshops</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value">5K+</span>
+              <span class="about-stat-label">Expected</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text reveal reveal-delay-2">
+          <span class="section-label">The Festival</span>
+          <h2 class="section-title">A Celebration of <em>Craft &amp; Culture</em></h2>
+          <p>Coffee Fest Halifax is the East Coast's first world-class coffee festival — a one-day immersive experience where artisan roasters, champion baristas, and coffee lovers converge on the Halifax waterfront.</p>
+          <p>From single-origin tastings and latte art throwdowns to masterclass workshops on sustainability and sourcing, every moment is curated for the curious palate and the passionate enthusiast.</p>
+          
+          <div class="about-features">
+            <div class="about-feature">
+              <span class="about-feature-icon">🫘</span>
+              <span class="about-feature-text">Artisan Roasters</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">🏆</span>
+              <span class="about-feature-text">Latte Art Championship</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">🎓</span>
+              <span class="about-feature-text">Brewing Workshops</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">🎶</span>
+              <span class="about-feature-text">Live Entertainment</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">🍽️</span>
+              <span class="about-feature-text">Food Pairings</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">🌱</span>
+              <span class="about-feature-text">Sustainability Talks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider">
+    <span class="line"></span>
+    <span class="icon">🫘</span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="experience-header reveal">
+        <span class="section-label">What to Expect</span>
+        <h2 class="section-title">An <em>Unforgettable</em> Experience</h2>
+        <p>One unforgettable day of discovery, connection, and the finest coffee culture Atlantic Canada has ever seen.</p>
+      </div>
+
+      <div class="experience-grid">
+        <div class="experience-card reveal reveal-delay-1">
+          <span class="experience-card-number">01</span>
+          <span class="experience-card-icon">🫘</span>
+          <h3>World-Class Tastings</h3>
+          <p>Sample exceptional single-origin coffees from over 50 artisan roasters across Canada and beyond. From Ethiopian Yirgacheffe to Colombian Gesha — every cup tells a story.</p>
+        </div>
+        <div class="experience-card reveal reveal-delay-2">
+          <span class="experience-card-number">02</span>
+          <span class="experience-card-icon">🏆</span>
+          <h3>Latte Art Throwdown</h3>
+          <p>Watch the East Coast's finest baristas compete in a live latte art championship. Precision, creativity, and showmanship collide in one of the festival's most electrifying events.</p>
+        </div>
+        <div class="experience-card reveal reveal-delay-3">
+          <span class="experience-card-number">03</span>
+          <span class="experience-card-icon">🎓</span>
+          <h3>Masterclass Workshops</h3>
+          <p>Learn the art of the pour-over, espresso extraction, and home roasting from industry legends. Whether you're a curious beginner or a seasoned professional, there's a seat for you.</p>
+        </div>
+        <div class="experience-card reveal reveal-delay-1">
+          <span class="experience-card-number">04</span>
+          <span class="experience-card-icon">🍽️</span>
+          <h3>Culinary Pairings</h3>
+          <p>Discover the surprising harmony of coffee and food. Local chefs and roasters collaborate to create tasting experiences that challenge everything you thought you knew about flavour.</p>
+        </div>
+        <div class="experience-card reveal reveal-delay-2">
+          <span class="experience-card-number">05</span>
+          <span class="experience-card-icon">🎶</span>
+          <h3>Live Music &amp; Culture</h3>
+          <p>The festival comes alive with East Coast artists, ambient sets, and curated sounds that perfectly complement your coffee journey from morning brew to evening espresso.</p>
+        </div>
+        <div class="experience-card reveal reveal-delay-3">
+          <span class="experience-card-number">06</span>
+          <span class="experience-card-icon">🌊</span>
+          <h3>Halifax Waterfront</h3>
+          <p>Set against the backdrop of one of Canada's most iconic harbours, Coffee Fest Halifax transforms the waterfront into a world-class cultural destination for one spectacular day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider">
+    <span class="line"></span>
+    <span class="icon">🫘</span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <span class="section-label">The Aesthetic</span>
+        <h2 class="section-title">A Feast for the <em>Eyes &amp; Palate</em></h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item--large showcase-item reveal">
+          <img src="images/latte-art.png" alt="Latte art at Coffee Fest Halifax">
+          <div class="gallery-overlay">
+            <span>Latte Art</span>
+          </div>
+        </div>
+        <div class="gallery-item showcase-item reveal reveal-delay-1">
+          <img src="images/coffee-flatlay.png" alt="Artisan coffee flat lay">
+          <div class="gallery-overlay">
+            <span>Artisan Craft</span>
+          </div>
+        </div>
+        <div class="gallery-item showcase-item reveal reveal-delay-2">
+          <img src="images/coffee-roasting.png" alt="Coffee roasting process">
+          <div class="gallery-overlay">
+            <span>The Roast</span>
+          </div>
+        </div>
+        <div class="gallery-item showcase-item reveal reveal-delay-1">
+          <img src="images/halifax-waterfront.png" alt="Halifax waterfront venue">
+          <div class="gallery-overlay">
+            <span>The Venue</span>
+          </div>
+        </div>
+        <div class="gallery-item showcase-item reveal reveal-delay-2">
+          <img src="images/hero-bg.png" alt="Coffee festival atmosphere">
+          <div class="gallery-overlay">
+            <span>The Atmosphere</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider">
+    <span class="line"></span>
+    <span class="icon">🫘</span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ========== HALIFAX ========== -->
+  <section class="halifax" id="halifax">
+    <div class="container">
+      <div class="halifax-grid">
+        <div class="halifax-image-wrapper reveal">
+          <div class="halifax-image">
+            <img src="images/halifax-waterfront.png" alt="Halifax waterfront">
+          </div>
+        </div>
+        <div class="halifax-content reveal reveal-delay-2">
+          <span class="section-label">The City</span>
+          <h2 class="section-title">Why <em>Halifax?</em></h2>
+          <p>Halifax is more than a backdrop — it's a character in the story. A city of salt air, maritime history, and a thriving independent food and coffee scene, Halifax was the only choice for Atlantic Canada's first world-class coffee festival.</p>
+          <div class="halifax-highlights">
+            <div class="halifax-highlight">
+              <span class="halifax-highlight-icon">🌊</span>
+              <div>
+                <strong>Iconic Waterfront Venue</strong>
+                <p>Steps from the harbour, surrounded by the energy of downtown Halifax.</p>
+              </div>
+            </div>
+            <div class="halifax-highlight">
+              <span class="halifax-highlight-icon">✈️</span>
+              <div>
+                <strong>Easily Accessible</strong>
+                <p>Direct flights from major Canadian cities. Halifax welcomes the world.</p>
+              </div>
+            </div>
+            <div class="halifax-highlight">
+              <span class="halifax-highlight-icon">☕</span>
+              <div>
+                <strong>Thriving Coffee Culture</strong>
+                <p>A city of passionate independents, roasters, and café devotees.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider">
+    <span class="line"></span>
+    <span class="icon">🫘</span>
+    <span class="line"></span>
+  </div>
+
+  <!-- ========== SIGNUP ========== -->
+  <section class="signup" id="signup">
+    <div class="signup-bg"></div>
+    <div class="container">
+      <div class="signup-content reveal">
+        <span class="section-label">Stay in the Loop</span>
+        <h2 class="section-title">Be the <em>First to Know</em></h2>
+        <p>Join our inner circle for early access to tickets, roaster announcements, and exclusive pre-festival offers. Coffee Fest Halifax happens once. Don't miss it.</p>
+        <form class="signup-form" id="signupForm">
+          <input type="email" id="emailInput" placeholder="your@email.com" required>
+          <button type="submit" class="btn btn-gold">Get Early Access</button>
+        </form>
+        <p class="signup-disclaimer">No spam. Just coffee. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <img src="images/logo.png" alt="Coffee Fest Halifax" class="nav-logo-img">
+          </a>
+          <p>Nova Scotia's premier coffee festival. One day of artisan roasters, champion baristas, and world-class brews on the Halifax waterfront.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Facebook">👥</a>
+            <a href="#" aria-label="Twitter/X">🐦</a>
+            <a href="#" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Festival</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#signup">Early Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Info</h4>
+          <ul class="footer-links">
+            <li><a href="#halifax">Halifax</a></li>
+            <li><a href="#">Vendors</a></li>
+            <li><a href="#">Sponsors</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:info@coffeefesthalifax.ca">info@coffeefesthalifax.ca</a></li>
+            <li><a href="#">coffeefesthalifax.ca</a></li>
+            <li><a href="#">Halifax, Nova Scotia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Coffee Fest Halifax. All rights reserved.</p>
+        <p>Crafted with ☕ in Halifax, NS</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

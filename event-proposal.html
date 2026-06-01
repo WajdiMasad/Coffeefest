@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Fest Halifax — Event Proposal to Build Nova Scotia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── Page Setup ── */
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.55;
+      color: #1a1208;
+      background: #fff;
+      width: 8.5in;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      overflow: hidden;
+      padding: 0.4in 0.7in 0.35in 0.7in;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-2 {
+      page-break-before: always;
+    }
+
+    /* ── Header / Letterhead ── */
+    .letterhead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.12in;
+      border-bottom: 2.5pt solid #d4af37;
+      margin-bottom: 0.04in;
+    }
+
+    .letterhead-logo {
+      height: 56pt;
+      width: auto;
+    }
+
+    .letterhead-info {
+      text-align: right;
+    }
+
+    .letterhead-info .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14pt;
+      font-weight: 700;
+      color: #0a0806;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 3pt;
+    }
+
+    .letterhead-info .brand-name span {
+      color: #d4af37;
+    }
+
+    .letterhead-info p {
+      font-size: 7.5pt;
+      color: #6b5d4e;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+
+    /* Gold rule under header */
+    .gold-rule {
+      width: 100%;
+      height: 0.5pt;
+      background: linear-gradient(90deg, #d4af37, #e09830, transparent);
+      margin-bottom: 0.12in;
+    }
+
+    /* ── Date & Address ── */
+    .meta-block {
+      margin-bottom: 0.08in;
+    }
+
+    .meta-block .date {
+      font-size: 8.5pt;
+      color: #6b5d4e;
+      margin-bottom: 0.1in;
+    }
+
+    .meta-block .recipient p {
+      font-size: 9pt;
+      line-height: 1.55;
+      color: #1a1208;
+    }
+
+    .meta-block .recipient strong {
+      font-weight: 600;
+    }
+
+    /* ── Subject Line ── */
+    .subject-line {
+      font-family: 'Playfair Display', serif;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #0a0806;
+      border-left: 2.5pt solid #d4af37;
+      padding-left: 8pt;
+      margin-bottom: 0.1in;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Body ── */
+    .salutation {
+      margin-bottom: 0.08in;
+      font-size: 9.5pt;
+    }
+
+    .body-text p {
+      margin-bottom: 0.065in;
+      font-size: 8.8pt;
+      color: #1a1208;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* ── Section Heading ── */
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0a0806;
+      margin: 0.07in 0 0.04in 0;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Highlight Box ── */
+    .highlight-box {
+      background: #fdf8f2;
+      border-left: 2.5pt solid #d4af37;
+      padding: 6pt 10pt;
+      margin: 0.06in 0;
+      font-size: 8.5pt;
+    }
+
+    .highlight-box p {
+      line-height: 1.65;
+      color: #1a1208;
+      margin-bottom: 3pt;
+    }
+
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-box strong {
+      color: #5c3d1e;
+    }
+
+    /* ── Impact Stats Grid ── */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6pt;
+      margin: 0.06in 0 0.08in 0;
+    }
+
+    .impact-item {
+      background: #0a0806;
+      color: #d4af37;
+      padding: 7pt 10pt;
+      text-align: center;
+    }
+
+    .impact-item .impact-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 14pt;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2pt;
+    }
+
+    .impact-item .impact-label {
+      font-size: 6.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #c9a84c;
+    }
+
+    /* ── Bullet Lists ── */
+    .body-text ul {
+      margin: 0.04in 0 0.065in 0.2in;
+      font-size: 8.8pt;
+    }
+
+    .body-text ul li {
+      margin-bottom: 3pt;
+      color: #1a1208;
+      line-height: 1.55;
+    }
+
+    .body-text ul li strong {
+      color: #5c3d1e;
+    }
+
+    /* ── Contact Block ── */
+    .contact-block {
+      background: #fdf8f2;
+      border-left: 2.5pt solid #d4af37;
+      padding: 5pt 9pt;
+      margin: 0.06in 0;
+      font-size: 8.5pt;
+    }
+
+    .contact-block p {
+      line-height: 1.7;
+      color: #1a1208;
+    }
+
+    .contact-block strong {
+      color: #5c3d1e;
+    }
+
+    /* ── Signature ── */
+    .signature-block {
+      margin-top: 0.08in;
+      font-size: 9pt;
+    }
+
+    .signature-block .closing {
+      margin-bottom: 0.16in;
+    }
+
+    .signature-block .sig-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 10pt;
+      color: #0a0806;
+    }
+
+    .signature-block .sig-title {
+      font-size: 8pt;
+      color: #6b5d4e;
+      margin-top: 2pt;
+    }
+
+    /* ── Footer ── */
+    .letter-footer {
+      margin-top: auto;
+      padding-top: 0.08in;
+      border-top: 0.5pt solid #d4af37;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .letter-footer p {
+      font-size: 7pt;
+      color: #a08060;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-bar {
+      width: 30pt;
+      height: 1.5pt;
+      background: #d4af37;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body {
+        width: 8.5in;
+      }
+      .page {
+        page-break-after: always;
+      }
+      .page:last-child {
+        page-break-after: avoid;
+      }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    /* ── Screen preview wrapper ── */
+    @media screen {
+      body {
+        background: #e8e0d8;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.4in 0;
+        gap: 0.3in;
+      }
+      .page {
+        background: #ffffff;
+        box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 1 -->
+  <!-- ============================================================ -->
+  <div class="page">
+
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+      <img src="adobe logo.png" alt="Coffee Fest Halifax" class="letterhead-logo">
+      <div class="letterhead-info">
+        <span class="brand-name">Coffee <span>Fest</span> Halifax</span>
+        <p>Halifax Waterfront, Nova Scotia, Canada</p>
+        <p>coffeefesthalifax.ca</p>
+        <p>info@coffeefesthalifax.ca</p>
+      </div>
+    </div>
+    <div class="gold-rule"></div>
+
+    <!-- DATE & RECIPIENT -->
+    <div class="meta-block">
+      <div class="date">April 21, 2026</div>
+      <div class="recipient">
+        <p><strong>Build Nova Scotia</strong></p>
+        <p>Events &amp; Partnerships</p>
+        <p>Halifax Waterfront</p>
+        <p>Halifax, Nova Scotia</p>
+      </div>
+    </div>
+
+    <!-- SUBJECT -->
+    <div class="subject-line">
+      Re: Event Proposal &mdash; Coffee Fest Halifax &nbsp;|&nbsp; October 3, 2026 &nbsp;|&nbsp; Halifax Waterfront
+    </div>
+
+    <!-- BODY -->
+    <div class="body-text">
+
+      <p class="salutation">Dear Build Nova Scotia Events Team,</p>
+
+      <p>
+        Thank you for the opportunity to submit this event proposal. On behalf of Coffee Fest Halifax, we are writing to formally present our vision for Atlantic Canada's first coffee festival, proposed for <strong>Saturday, October 3, 2026</strong> on the Halifax Waterfront, proudly managed by Build Nova Scotia.
+      </p>
+
+      <p>
+        Coffee Fest Halifax is produced by the same organizing team behind two of the region's most successful community events &mdash; <strong>East Coast Inflate-a-Palooza</strong> and <strong>Philippine Fiesta</strong> &mdash; bringing a proven track record of large-scale event execution, community engagement, and responsible venue stewardship to everything we undertake.
+      </p>
+
+      <div class="section-heading">Event Overview</div>
+
+      <p>
+        Coffee Fest Halifax is a one-day immersive festival experience that brings together artisan coffee roasters, champion baristas, local cafés and bakeries, authors, musicians, and thousands of coffee enthusiasts for a curated celebration of craft, culture, and community on the waterfront. Programming will include latte art throwdowns, live music, and dedicated marketplace areas for local vendors and creators.
+      </p>
+
+      <!-- Impact Stats -->
+      <div class="impact-grid">
+        <div class="impact-item">
+          <span class="impact-value">5,000+</span>
+          <span class="impact-label">Projected Attendance</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-value">20</span>
+          <span class="impact-label">Vendors &amp; Exhibitors</span>
+        </div>
+      </div>
+
+      <div class="section-heading">Positive Economic Impact on the Halifax Waterfront</div>
+
+      <p>
+        We believe Coffee Fest Halifax represents a meaningful economic opportunity for the waterfront and the broader Halifax community. Based on comparable specialty festivals in Atlantic Canada and our own event history, we project the following direct and indirect economic contributions:
+      </p>
+
+      <ul>
+        <li><strong>Increased foot traffic and consumer spending:</strong> An estimated five thousand attendees will generate significant on-site consumer spending across vendor booths, food and beverage purchases, and merchandise &mdash; with a substantial portion flowing directly to locally owned small businesses operating on-site.</li>
+        <li><strong>Tourism and destination value:</strong> Coffee Fest Halifax will attract visitors from across Nova Scotia, the Maritimes, and beyond, driving incremental hotel bookings, restaurant visits, and retail spending in the surrounding waterfront district and downtown core. October is a transitional shoulder season for Halifax tourism, making this event a strategic driver of off-peak visitation.</li>
+        <li><strong>Small business amplification:</strong> Unlike corporate-driven festivals, Coffee Fest Halifax is intentionally structured to elevate small, independent businesses. Local cafés, micro-roasters, bakeries, and artisan food producers will serve as the primary vendor base &mdash; giving these businesses a high-visibility platform to reach thousands of new customers in a single day.</li>
+        <li><strong>Waterfront brand enhancement:</strong> Hosting a premium, well-curated cultural event reinforces Build Nova Scotia's mandate to develop the Halifax Waterfront as a year-round destination for vibrant community programming &mdash; not only during peak summer months, but well into Fall.</li>
+      </ul>
+
+      <div class="section-heading">Community Involvement &amp; Cultural Enrichment</div>
+
+      <p>
+        At its core, Coffee Fest Halifax is a community-first event. Our programming is designed to be inclusive, accessible, and deeply rooted in the fabric of Halifax's creative and entrepreneurial community:
+      </p>
+
+      <ul>
+        <li><strong>Supporting local authors:</strong> We are dedicating a curated marketplace area where Nova Scotia authors, poets, and independent publishers can showcase and sell their work directly to festival attendees. Coffee and literature share a timeless relationship, and we believe the waterfront is the perfect stage to champion local voices and storytelling.</li>
+        <li><strong>Empowering local cafés and bakeries:</strong> Local coffee shops, bakeries, and food artisans will be featured as primary vendors with the freedom to advertise their brand, promote their locations, and build lasting customer relationships. This is not a white-label event &mdash; every vendor retains full brand visibility and ownership of their customer experience.</li>
+
+        <li><strong>Cultural programming:</strong> Live performances by Atlantic Canadian musicians, artisan demonstrations, and interactive experiences will ensure the festival is as much about community connection and cultural celebration as it is about coffee.</li>
+
+      </ul>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="letter-footer">
+      <div class="footer-bar"></div>
+      <p>Coffee Fest Halifax &nbsp;&bull;&nbsp; Event Proposal &nbsp;&bull;&nbsp; Page 1 of 2</p>
+      <div class="footer-bar"></div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 2 -->
+  <!-- ============================================================ -->
+  <div class="page page-2">
+
+    <!-- LETTERHEAD (repeated for print) -->
+    <div class="letterhead">
+      <img src="adobe logo.png" alt="Coffee Fest Halifax" class="letterhead-logo">
+      <div class="letterhead-info">
+        <span class="brand-name">Coffee <span>Fest</span> Halifax</span>
+        <p>Halifax Waterfront, Nova Scotia, Canada</p>
+        <p>coffeefesthalifax.ca</p>
+        <p>info@coffeefesthalifax.ca</p>
+      </div>
+    </div>
+    <div class="gold-rule"></div>
+
+    <div class="body-text">
+
+      <div class="section-heading">Vendor &amp; Marketplace Structure</div>
+
+      <p>
+        Coffee Fest Halifax will feature a diverse and carefully curated vendor marketplace designed to maximize both the attendee experience and the commercial opportunity for participating businesses:
+      </p>
+
+      <ul>
+        <li><strong>Artisan Coffee Roasters:</strong> Independent roasters from across the region offering single-origin tastings, retail sales, and brewing demonstrations.</li>
+        <li><strong>Local Cafés &amp; Coffee Shops:</strong> Halifax-area cafés will operate branded booths with full creative freedom to showcase their signature drinks, packaging, and brand identity &mdash; functioning as a powerful advertising and customer acquisition channel at no restriction to their brand presentation.</li>
+        <li><strong>Bakeries &amp; Culinary Vendors:</strong> Local bakeries and food artisans will feature curated pairings alongside the coffee experience, with the ability to freely promote their storefronts, menus, and brand to a captive audience of thousands.</li>
+        <li><strong>Authors &amp; Literary Corner:</strong> A dedicated section for local authors and independent publishers to display, sign, and sell their books &mdash; creating a unique cultural layer that distinguishes Coffee Fest Halifax from conventional food and beverage festivals.</li>
+        <li><strong>Equipment &amp; Lifestyle Brands:</strong> Coffee equipment manufacturers, ceramicists, and lifestyle brands aligned with the specialty coffee community.</li>
+      </ul>
+
+      <div class="section-heading">Event Logistics &amp; Venue Stewardship</div>
+
+      <p>
+        Our team has extensive experience managing large-scale public events and we are committed to operating Coffee Fest Halifax with the highest standard of venue care and professionalism:
+      </p>
+
+      <ul>
+        <li>Full event liability insurance and compliance with all municipal permitting requirements</li>
+        <li>Professional waste management and post-event site restoration</li>
+        <li>On-site security and crowd management personnel</li>
+        <li>Coordination with Halifax Regional Municipality, Halifax Regional Police, and emergency services</li>
+        <li>Noise management plan and adherence to all waterfront operational guidelines</li>
+        <li>Accessible layout design in accordance with Nova Scotia accessibility standards</li>
+      </ul>
+
+      <div class="section-heading">Alignment with Build Nova Scotia's Mandate</div>
+
+      <p>
+        Build Nova Scotia's mission to develop vibrant, community-centered public spaces is at the heart of what we aim to deliver. Coffee Fest Halifax directly supports your strategic goals by activating the waterfront as a cultural and economic hub, attracting diverse audiences during the Fall shoulder season, amplifying locally owned small businesses, and creating the kind of premium shared experience that makes Halifax a destination worth visiting &mdash; and worth staying in.
+      </p>
+
+      <p>
+        We would welcome the opportunity to discuss this proposal in greater detail, provide any additional documentation, and collaborate on a partnership structure that serves Build Nova Scotia's vision for the waterfront.
+      </p>
+
+      <div class="contact-block">
+        <p><strong>Email:</strong> &nbsp; info@coffeefesthalifax.ca</p>
+        <p><strong>Web:</strong> &nbsp;&nbsp;&nbsp; coffeefesthalifax.ca</p>
+      </div>
+
+      <p>
+        Thank you sincerely for your time and consideration. We are confident that Coffee Fest Halifax will deliver lasting value to the waterfront, to the community, and to the thousands of Nova Scotians and visitors who will experience it.
+      </p>
+
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature-block">
+      <div class="closing">Yours sincerely,</div>
+      <div class="sig-name">The Coffee Fest Halifax Team</div>
+      <div class="sig-title">Coffee Fest Halifax &nbsp;|&nbsp; info@coffeefesthalifax.ca &nbsp;|&nbsp; coffeefesthalifax.ca</div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="letter-footer">
+      <div class="footer-bar"></div>
+      <p>Coffee Fest Halifax &nbsp;&bull;&nbsp; October 3, 2026 &nbsp;&bull;&nbsp; Halifax Waterfront, Nova Scotia, Canada</p>
+      <div class="footer-bar"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
