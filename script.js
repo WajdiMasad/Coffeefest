@@ -162,17 +162,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = emailInput.value.trim();
     if (!email) return;
 
-    // Animate the button
     const btn = signupForm.querySelector('button');
     const originalText = btn.textContent;
-    btn.textContent = '✓ You\'re In!';
-    btn.style.background = 'linear-gradient(135deg, #2d7d46 0%, #1a5c2e 100%)';
-    emailInput.value = '';
+    
+    // Loading state
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
-    }, 3000);
+    // Send to Google Sheet
+    fetch('https://script.google.com/macros/s/AKfycbzjlPUAPURurlAJ59VpZf-t633FkpkX6FsG_hizmXx7NUwvI_v0Vgyu9LcwTDXp8_oK/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams({
+        'email': email
+      })
+    })
+    .then(response => {
+      // Success state
+      btn.textContent = ' You\'re In!';
+      btn.style.background = 'linear-gradient(135deg, #2d7d46 0%, #1a5c2e 100%)';
+      emailInput.value = '';
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      btn.textContent = 'Error. Try Again.';
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }, 3000);
+    });
   });
 
   // =============================================

@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Fest Halifax — Brand Identity Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Print Setup ── */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    @media print {
+      html, body { width: 210mm; }
+      .page { page-break-after: always; break-after: page; }
+      .page:last-child { page-break-after: avoid; break-after: avoid; }
+      .no-print { display: none; }
+    }
+
+    /* ── Base ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:       #192E41;
+      --navy-light: #243d54;
+      --cream:      #E8DCC8;
+      --cream-dark: #c9b89a;
+      --gold:       #C8A44E;
+      --gold-dark:  #9a7830;
+      --espresso:   #3b2314;
+      --white:      #ffffff;
+      --off-white:  #faf8f4;
+      --text-dark:  #1a120a;
+      --text-mid:   #4a3f32;
+      --text-light: #8c7d6a;
+      --border:     rgba(200,164,78,0.25);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e8e4de;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ── Pages ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 2rem;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    }
+
+    /* ══════════════════════════════════════
+       PAGE 1 — COVER
+    ══════════════════════════════════════ */
+    .cover {
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 297mm;
+      position: relative;
+    }
+
+    .cover-corner {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-color: rgba(200,164,78,0.3);
+      border-style: solid;
+    }
+    .cover-corner.tl { top: 32px; left: 32px; border-width: 2px 0 0 2px; }
+    .cover-corner.tr { top: 32px; right: 32px; border-width: 2px 2px 0 0; }
+    .cover-corner.bl { bottom: 32px; left: 32px; border-width: 0 0 2px 2px; }
+    .cover-corner.br { bottom: 32px; right: 32px; border-width: 0 2px 2px 0; }
+
+    .cover-logo-wrap {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 2px solid rgba(200,164,78,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 3rem;
+      padding: 24px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .cover-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .cover-tag {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .cover h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--cream);
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .cover h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .cover-sub {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--cream-dark);
+      margin-bottom: 3.5rem;
+    }
+
+    .cover-divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin-bottom: 3.5rem;
+    }
+
+    .cover-meta {
+      text-align: center;
+    }
+
+    .cover-meta p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(232,220,200,0.5);
+      margin-bottom: 0.4rem;
+    }
+
+    .cover-meta strong {
+      color: rgba(232,220,200,0.85);
+      font-weight: 600;
+    }
+
+    /* ══════════════════════════════════════
+       INNER PAGES — LAYOUT
+    ══════════════════════════════════════ */
+    .inner {
+      padding: 14mm 16mm;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10mm;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 10mm;
+    }
+
+    .page-header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-header-brand img {
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .page-header-brand span {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .page-header-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    .section-heading {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+
+    .body-text {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .page-footer {
+      margin-top: auto;
+      padding-top: 6mm;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .page-footer span {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--text-light);
+      text-transform: uppercase;
+    }
+
+    /* ══════════════════════════════════════
+       PAGE 2 — LOGO SHOWCASE
+    ══════════════════════════════════════ */
+    .logo-showcase-primary {
+      background: var(--navy);
+      border-radius: 6px;
+      padding: 14mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6mm;
+      min-height: 72mm;
+    }
+
+    .logo-showcase-primary img {
+      max-height: 56mm;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .logo-showcase-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+
+    .logo-variant {
+      border-radius: 6px;
+      padding: 8mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 42mm;
+      gap: 4mm;
+    }
+
+    .logo-variant img {
+      max-height: 32mm;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .logo-variant-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .bg-navy { background: var(--navy); }
+    .bg-navy .logo-variant-label { color: rgba(232,220,200,0.5); }
+    .bg-cream { background: var(--cream); }
+    .bg-cream .logo-variant-label { color: var(--text-mid); }
+    .bg-white { background: var(--white); border: 1px solid var(--border); }
+    .bg-white .logo-variant-label { color: var(--text-light); }
+    .bg-espresso { background: var(--espresso); }
+    .bg-espresso .logo-variant-label { color: rgba(232,220,200,0.5); }
+
+    /* clear space diagram */
+    .clearspace-box {
+      border: 1.5px dashed rgba(200,164,78,0.4);
+      border-radius: 4px;
+      padding: 6mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: var(--off-white);
+    }
+
+    .clearspace-box img {
+      max-height: 28mm;
+      object-fit: contain;
+    }
+
+    .clearspace-label {
+      position: absolute;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.55rem;
+      color: var(--gold-dark);
+      letter-spacing: 0.15em;
+    }
+    .clearspace-label.top    { top: 3mm; left: 50%; transform: translateX(-50%); }
+    .clearspace-label.bottom { bottom: 3mm; left: 50%; transform: translateX(-50%); }
+    .clearspace-label.left   { left: 3mm; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+    .clearspace-label.right  { right: 3mm; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+    /* ══════════════════════════════════════
+       PAGE 3 — COLOUR PALETTE
+    ══════════════════════════════════════ */
+    .colour-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5mm;
+      margin-bottom: 7mm;
+    }
+
+    .colour-card {
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .colour-swatch {
+      height: 28mm;
+    }
+
+    .colour-info {
+      background: var(--white);
+      padding: 3.5mm 4mm;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-top: none;
+    }
+
+    .colour-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .colour-role {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .colour-values {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .colour-values span {
+      font-family: 'Inter', monospace;
+      font-size: 0.65rem;
+      color: var(--text-mid);
+    }
+
+    .colour-values span strong {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    /* secondary / supporting palette */
+    .colour-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4mm;
+    }
+
+    .colour-card-sm {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    .colour-swatch-sm {
+      height: 16mm;
+    }
+
+    .colour-info-sm {
+      background: var(--white);
+      padding: 2.5mm 3mm;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-top: none;
+    }
+
+    .colour-info-sm .colour-name {
+      font-size: 0.7rem;
+      margin-bottom: 2px;
+    }
+
+    .colour-info-sm .colour-values span {
+      font-size: 0.6rem;
+    }
+
+    /* ══════════════════════════════════════
+       PAGE 4 — TYPOGRAPHY
+    ══════════════════════════════════════ */
+    .type-block {
+      margin-bottom: 7mm;
+      padding-bottom: 7mm;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .type-block:last-of-type {
+      border-bottom: none;
+    }
+
+    .type-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2mm;
+    }
+
+    .type-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    .type-use {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      color: var(--text-light);
+    }
+
+    .type-specimen-display {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 3mm;
+    }
+
+    .type-specimen-display em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+
+    .type-specimen-subhead {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+      margin-bottom: 3mm;
+    }
+
+    .type-specimen-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    .type-weights {
+      display: flex;
+      gap: 6mm;
+      flex-wrap: wrap;
+      margin-top: 3mm;
+    }
+
+    .type-weight-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .type-weight-item span:first-child {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .type-weight-sample {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+
+    .type-scale {
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+      margin-top: 3mm;
+    }
+
+    .type-scale-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4mm;
+    }
+
+    .type-scale-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      width: 18mm;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════
+       PAGE 5 — BRAND VOICE & USAGE
+    ══════════════════════════════════════ */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+      margin-bottom: 7mm;
+    }
+
+    .voice-card {
+      background: var(--off-white);
+      border-radius: 6px;
+      padding: 5mm;
+      border-left: 3px solid var(--gold);
+    }
+
+    .voice-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 2mm;
+    }
+
+    .voice-card p {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    .usage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+      margin-bottom: 7mm;
+    }
+
+    .usage-card {
+      border-radius: 6px;
+      padding: 5mm;
+    }
+
+    .usage-card.do {
+      background: #f0f7f0;
+      border: 1px solid #b8d8b8;
+    }
+
+    .usage-card.dont {
+      background: #fdf0f0;
+      border: 1px solid #e8b8b8;
+    }
+
+    .usage-card-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3mm;
+    }
+
+    .usage-badge {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    .usage-badge.do   { background: #2d7d2d; color: white; }
+    .usage-badge.dont { background: #cc3333; color: white; }
+
+    .usage-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+    }
+
+    .usage-card ul li {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      padding-left: 12px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .usage-card.do ul li::before    { content: '✓'; position: absolute; left: 0; color: #2d7d2d; font-weight: 700; }
+    .usage-card.dont ul li::before  { content: '✗'; position: absolute; left: 0; color: #cc3333; font-weight: 700; }
+
+    /* contact footer */
+    .contact-bar {
+      background: var(--navy);
+      border-radius: 6px;
+      padding: 5mm 7mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .contact-bar p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.68rem;
+      color: rgba(232,220,200,0.7);
+      letter-spacing: 0.05em;
+    }
+
+    .contact-bar strong {
+      color: var(--cream);
+      font-weight: 600;
+    }
+
+    /* ── Print button ── */
+    .print-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--navy);
+      color: var(--cream);
+      border: none;
+      padding: 0.9rem 2rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(25,46,65,0.3);
+      transition: all 0.3s;
+    }
+
+    .print-btn:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     PAGE 1 — COVER
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-corner tl"></div>
+    <div class="cover-corner tr"></div>
+    <div class="cover-corner bl"></div>
+    <div class="cover-corner br"></div>
+
+    <div class="cover-logo-wrap">
+      <img src="images/official-logo.png" alt="Coffee Fest Halifax Official Logo">
+    </div>
+
+    <p class="cover-tag">Brand Identity Guide</p>
+    <h1>Coffee Fest<br><em>Halifax</em></h1>
+    <p class="cover-sub">Halifax, Nova Scotia &nbsp;·&nbsp; October 2026</p>
+
+    <div class="cover-divider"></div>
+
+    <div class="cover-meta">
+      <p>Prepared by the Coffee Fest Halifax Organizing Committee</p>
+      <p>Contact: <strong>info@coffeefesthalifax.ca</strong></p>
+      <p style="margin-top:0.75rem;">Version 1.0 &nbsp;·&nbsp; Confidential</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE 2 — LOGO SHOWCASE
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="inner">
+    <div class="page-header">
+      <div class="page-header-brand">
+        <img src="images/official-logo.png" alt="Logo">
+        <span>Coffee Fest Halifax</span>
+      </div>
+      <span class="page-header-title">02 — Logo System</span>
+    </div>
+
+    <p class="section-heading">Primary Mark</p>
+    <h2 class="section-title">The <em>Official Logo</em></h2>
+    <p class="body-text">The Coffee Fest Halifax logo is the cornerstone of our brand identity. It combines maritime heritage — represented through the anchor and ocean waves — with the warmth and craft of specialty coffee culture. The circular seal format conveys a sense of occasion, tradition, and community.</p>
+
+    <div class="logo-showcase-primary">
+      <img src="images/official-logo.png" alt="Coffee Fest Halifax — Primary Logo on Navy">
+    </div>
+
+    <p class="section-heading" style="margin-bottom:3mm;">Logo Variations</p>
+    <div class="logo-showcase-row">
+      <div class="logo-variant bg-navy">
+        <img src="images/official-logo.png" alt="Logo on Navy">
+        <span class="logo-variant-label">Primary — On Navy</span>
+      </div>
+      <div class="logo-variant bg-cream">
+        <img src="images/official-logo.png" alt="Logo on Cream">
+        <span class="logo-variant-label">Secondary — On Cream</span>
+      </div>
+    </div>
+
+    <p class="section-heading" style="margin-bottom:3mm;">Clear Space</p>
+    <p class="body-text" style="margin-bottom:3mm;">Always maintain a minimum clear space equal to the height of the "C" in COFFEE around all sides of the logo. Never crowd the logo with other elements.</p>
+    <div class="clearspace-box">
+      <img src="images/official-logo.png" alt="Clear Space Diagram">
+      <span class="clearspace-label top">Minimum clear space</span>
+      <span class="clearspace-label bottom">Minimum clear space</span>
+      <span class="clearspace-label left">Clear</span>
+      <span class="clearspace-label right">Clear</span>
+    </div>
+
+    <div class="page-footer">
+      <span>Coffee Fest Halifax — Brand Identity Guide</span>
+      <span>Page 2 of 5</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE 3 — COLOUR PALETTE
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="inner">
+    <div class="page-header">
+      <div class="page-header-brand">
+        <img src="images/official-logo.png" alt="Logo">
+        <span>Coffee Fest Halifax</span>
+      </div>
+      <span class="page-header-title">03 — Colour Palette</span>
+    </div>
+
+    <p class="section-heading">Primary Palette</p>
+    <h2 class="section-title">Colour <em>System</em></h2>
+    <p class="body-text">Our palette is rooted in the maritime landscape of Halifax and the warmth of specialty coffee. Deep navy anchors the brand with authority while gold and cream bring warmth and approachability.</p>
+
+    <div class="colour-grid">
+      <div class="colour-card">
+        <div class="colour-swatch" style="background:#192E41;"></div>
+        <div class="colour-info">
+          <p class="colour-name">Admiral Navy</p>
+          <p class="colour-role">Primary Background</p>
+          <div class="colour-values">
+            <span><strong>HEX</strong> &nbsp;#192E41</span>
+            <span><strong>RGB</strong> &nbsp;25, 46, 65</span>
+            <span><strong>CMYK</strong> &nbsp;62, 29, 0, 75</span>
+          </div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background:#C8A44E;"></div>
+        <div class="colour-info">
+          <p class="colour-name">Maritime Gold</p>
+          <p class="colour-role">Primary Accent</p>
+          <div class="colour-values">
+            <span><strong>HEX</strong> &nbsp;#C8A44E</span>
+            <span><strong>RGB</strong> &nbsp;200, 164, 78</span>
+            <span><strong>CMYK</strong> &nbsp;0, 18, 61, 22</span>
+          </div>
+        </div>
+      </div>
+      <div class="colour-card">
+        <div class="colour-swatch" style="background:#E8DCC8;"></div>
+        <div class="colour-info">
+          <p class="colour-name">Sea Cream</p>
+          <p class="colour-role">Secondary / Text on Dark</p>
+          <div class="colour-values">
+            <span><strong>HEX</strong> &nbsp;#E8DCC8</span>
+            <span><strong>RGB</strong> &nbsp;232, 220, 200</span>
+            <span><strong>CMYK</strong> &nbsp;0, 5, 14, 9</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-heading" style="margin-bottom:4mm;">Supporting Palette</p>
+    <div class="colour-row">
+      <div class="colour-card-sm">
+        <div class="colour-swatch-sm" style="background:#3b2314;"></div>
+        <div class="colour-info-sm">
+          <p class="colour-name">Espresso</p>
+          <div class="colour-values"><span><strong>HEX</strong> #3b2314</span></div>
+        </div>
+      </div>
+      <div class="colour-card-sm">
+        <div class="colour-swatch-sm" style="background:#243d54;"></div>
+        <div class="colour-info-sm">
+          <p class="colour-name">Harbour Blue</p>
+          <div class="colour-values"><span><strong>HEX</strong> #243d54</span></div>
+        </div>
+      </div>
+      <div class="colour-card-sm">
+        <div class="colour-swatch-sm" style="background:#faf8f4;"></div>
+        <div class="colour-info-sm">
+          <p class="colour-name">Fog White</p>
+          <div class="colour-values"><span><strong>HEX</strong> #faf8f4</span></div>
+        </div>
+      </div>
+      <div class="colour-card-sm">
+        <div class="colour-swatch-sm" style="background:#9a7830;"></div>
+        <div class="colour-info-sm">
+          <p class="colour-name">Dark Gold</p>
+          <div class="colour-values"><span><strong>HEX</strong> #9a7830</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:6mm; padding:5mm; background:var(--off-white); border-radius:6px; border-left:3px solid var(--gold);">
+      <p style="font-family:'Outfit',sans-serif; font-size:0.6rem; font-weight:700; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-dark); margin-bottom:2mm;">Accessibility Note</p>
+      <p class="body-text" style="margin-bottom:0;">Admiral Navy (#192E41) on Sea Cream (#E8DCC8) achieves a contrast ratio of <strong>8.4:1</strong> — exceeding WCAG AA and AAA standards. Maritime Gold (#C8A44E) should only be used as an accent colour, not for body text on white backgrounds.</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Coffee Fest Halifax — Brand Identity Guide</span>
+      <span>Page 3 of 5</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE 4 — TYPOGRAPHY
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="inner">
+    <div class="page-header">
+      <div class="page-header-brand">
+        <img src="images/official-logo.png" alt="Logo">
+        <span>Coffee Fest Halifax</span>
+      </div>
+      <span class="page-header-title">04 — Typography</span>
+    </div>
+
+    <p class="section-heading">Type System</p>
+    <h2 class="section-title">Fonts &amp; <em>Hierarchy</em></h2>
+
+    <!-- Playfair Display -->
+    <div class="type-block">
+      <div class="type-meta">
+        <span class="type-name">Playfair Display</span>
+        <span class="type-use">Headings · Display · Hero Text · Logo Wordmark</span>
+      </div>
+      <div class="type-specimen-display">Coffee Fest <em>Halifax</em></div>
+      <p class="body-text" style="margin-bottom:3mm;">A high-contrast serif typeface with elegant ink-trap details. Its classical proportions and lively italics perfectly capture the blend of tradition and celebration at the heart of our festival.</p>
+      <div class="type-weights">
+        <div class="type-weight-item">
+          <span>Regular 400</span>
+          <span class="type-weight-sample" style="font-weight:400;">Coffee Fest</span>
+        </div>
+        <div class="type-weight-item">
+          <span>SemiBold 600</span>
+          <span class="type-weight-sample" style="font-weight:600;">Coffee Fest</span>
+        </div>
+        <div class="type-weight-item">
+          <span>Bold 700</span>
+          <span class="type-weight-sample" style="font-weight:700;">Coffee Fest</span>
+        </div>
+        <div class="type-weight-item">
+          <span>Black 900</span>
+          <span class="type-weight-sample" style="font-weight:900;">Coffee Fest</span>
+        </div>
+        <div class="type-weight-item">
+          <span>Italic</span>
+          <span class="type-weight-sample" style="font-style:italic;">Coffee Fest</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outfit -->
+    <div class="type-block">
+      <div class="type-meta">
+        <span class="type-name">Outfit</span>
+        <span class="type-use">Navigation · Labels · Badges · UI Elements · Subheadings</span>
+      </div>
+      <div class="type-specimen-subhead">OCTOBER 2026 · HALIFAX WATERFRONT</div>
+      <p class="body-text" style="margin-bottom:3mm;">A geometric sans-serif with clean, modern proportions. Used for all uppercase labels, navigation items, and UI components — providing a contemporary counterpoint to the classical serif.</p>
+      <div class="type-scale">
+        <div class="type-scale-row">
+          <span class="type-scale-label">800 — Hero</span>
+          <span style="font-family:'Outfit',sans-serif; font-weight:800; font-size:1.4rem; color:var(--navy);">BREWING SOON</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="type-scale-label">600 — Label</span>
+          <span style="font-family:'Outfit',sans-serif; font-weight:600; font-size:0.85rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--navy);">GOLD SPONSORS</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="type-scale-label">400 — Body</span>
+          <span style="font-family:'Outfit',sans-serif; font-weight:400; font-size:0.9rem; color:var(--text-mid);">The premier specialty coffee festival on the East Coast.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inter -->
+    <div class="type-block">
+      <div class="type-meta">
+        <span class="type-name">Inter</span>
+        <span class="type-use">Body Copy · Descriptions · Long-form Text · Forms</span>
+      </div>
+      <p class="type-specimen-body">Coffee Fest Halifax brings together the finest roasters, baristas, and coffee enthusiasts for one unforgettable day at the Halifax waterfront. Explore the rich world of specialty coffee through live demonstrations, masterclass workshops, artisan vendors, and so much more.</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Coffee Fest Halifax — Brand Identity Guide</span>
+      <span>Page 4 of 5</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE 5 — BRAND VOICE & USAGE RULES
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="inner">
+    <div class="page-header">
+      <div class="page-header-brand">
+        <img src="images/official-logo.png" alt="Logo">
+        <span>Coffee Fest Halifax</span>
+      </div>
+      <span class="page-header-title">05 — Brand Voice &amp; Usage</span>
+    </div>
+
+    <p class="section-heading">Brand Personality</p>
+    <h2 class="section-title">Voice &amp; <em>Tone</em></h2>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <h4>Warm &amp; Welcoming</h4>
+        <p>We speak to everyone — from the casual coffee drinker to the dedicated connoisseur. Our tone is approachable, enthusiastic, and never condescending.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Proud &amp; Local</h4>
+        <p>Halifax is not a backdrop — it's the soul of the event. We celebrate Nova Scotia's community, coast, and culture in everything we say and create.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Premium, Not Pretentious</h4>
+        <p>We uphold high standards for craft and quality, but we communicate them with humility and joy. Great coffee should feel exciting, not exclusive.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Celebratory</h4>
+        <p>Coffee Fest is a festival. Our language should feel alive, energetic, and worth looking forward to. Think: invitation, not announcement.</p>
+      </div>
+    </div>
+
+    <p class="section-heading" style="margin-bottom:3mm;">Logo Usage Rules</p>
+    <div class="usage-grid">
+      <div class="usage-card do">
+        <div class="usage-card-header">
+          <span class="usage-badge do">Do</span>
+        </div>
+        <ul>
+          <li>Use the logo on approved backgrounds (navy, cream, white, espresso)</li>
+          <li>Maintain the minimum clear space on all sides</li>
+          <li>Use the full-colour version wherever possible</li>
+          <li>Scale the logo proportionally at all times</li>
+          <li>Request the source .ai file for print production</li>
+          <li>Use the logo at a minimum size of 30mm wide in print</li>
+        </ul>
+      </div>
+      <div class="usage-card dont">
+        <div class="usage-card-header">
+          <span class="usage-badge dont">Don't</span>
+        </div>
+        <ul>
+          <li>Stretch, skew, or distort the logo in any dimension</li>
+          <li>Apply drop shadows, glows, or unsanctioned effects</li>
+          <li>Place the logo on busy photographic backgrounds</li>
+          <li>Change any colours within the logo mark</li>
+          <li>Recreate or redraw the logo in another application</li>
+          <li>Use the logo at sizes below minimum clear space requirements</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="section-heading" style="margin-bottom:3mm;">Contact &amp; Asset Requests</p>
+    <div class="contact-bar">
+      <div>
+        <p style="margin-bottom:3px;"><strong>Coffee Fest Halifax Organizing Committee</strong></p>
+        <p>For brand, media, and asset enquiries</p>
+      </div>
+      <div style="text-align:right;">
+        <p><strong>info@coffeefesthalifax.ca</strong></p>
+        <p>coffeefesthalifax.ca</p>
+        <p style="margin-top:4px;">Halifax, Nova Scotia · October 2026</p>
+      </div>
+    </div>
+
+    <div class="page-footer" style="margin-top:4mm;">
+      <span>Coffee Fest Halifax — Brand Identity Guide</span>
+      <span>Page 5 of 5</span>
+    </div>
+  </div>
+</div>
+
+<!-- Print Button -->
+<button class="print-btn no-print" onclick="window.print()">⬇ Save as PDF</button>
+
+</body>
+</html>

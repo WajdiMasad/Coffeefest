@@ -7,37 +7,40 @@
 
 /* ---------- Custom Properties ---------- */
 :root {
-  /* Core palette */
-  --bg-primary:       #0a0806;
-  --bg-secondary:     #120f0b;
-  --bg-card:          rgba(18, 15, 11, 0.7);
-  --bg-glass:         rgba(18, 15, 11, 0.45);
-  
-  --text-primary:     #f5efe6;
-  --text-secondary:   #b8a992;
-  --text-muted:       #7a6e5f;
-  
-  /* Accent warm golds & ambers */
-  --accent-gold:      #d4af37;
-  --accent-amber:     #e09830;
-  --accent-copper:    #c47f2c;
-  --accent-cream:     #f5e6c8;
-  --accent-espresso:  #3b2314;
-  
+  /* ── Official Brand Palette ── */
+  --navy:             #192E41;
+  --cream:            #f1e0c5;
+
+  /* Mapped tokens */
+  --bg-primary:       var(--cream);
+  --bg-secondary:     var(--navy);
+  --bg-card:          var(--cream);
+  --bg-glass:         rgba(241,224,197,0.92);
+
+  --text-primary:     var(--navy);
+  --text-secondary:   var(--navy);
+  --text-muted:       var(--navy);
+
+  --accent-gold:      var(--navy);
+  --accent-amber:     var(--navy);
+  --accent-copper:    var(--navy);
+  --accent-cream:     var(--cream);
+  --accent-espresso:  var(--navy);
+
   /* Gradients */
-  --gradient-gold:    linear-gradient(135deg, #d4af37 0%, #e09830 50%, #c47f2c 100%);
-  --gradient-dark:    linear-gradient(180deg, #0a0806 0%, #1a150f 50%, #0a0806 100%);
-  --gradient-hero:    linear-gradient(180deg, rgba(10,8,6,0.3) 0%, rgba(10,8,6,0.6) 40%, rgba(10,8,6,0.95) 100%);
-  --gradient-top:     linear-gradient(180deg, rgba(10,8,6,0.9) 0%, rgba(10,8,6,0) 100%);
-  
+  --gradient-gold:    linear-gradient(135deg, var(--navy) 0%, var(--navy) 100%);
+  --gradient-navy:    linear-gradient(180deg, var(--navy) 0%, var(--navy) 100%);
+  --gradient-hero:    linear-gradient(180deg, rgba(25,46,65,0.4) 0%, rgba(25,46,65,0.7) 40%, rgba(25,46,65,0.95) 100%);
+  --gradient-top:     linear-gradient(180deg, rgba(25,46,65,0.85) 0%, rgba(25,46,65,0) 100%);
+
   /* Spacing */
   --section-padding:  clamp(4rem, 10vw, 8rem);
   --container-max:    1200px;
-  
+
   /* Transitions */
   --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);
-  
+
   /* Blur */
   --blur-glass:       20px;
   --blur-heavy:       40px;
@@ -61,15 +64,21 @@ html {
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-primary);
-  color: var(--text-primary);
+  color: inherit;
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Brand scrollbar */
+::-webkit-scrollbar        { width: 8px; }
+::-webkit-scrollbar-track  { background: var(--cream-soft); }
+::-webkit-scrollbar-thumb  { background: var(--navy); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
 ::selection {
-  background: var(--accent-gold);
+  background: inherit;
   color: var(--bg-primary);
 }
 
@@ -79,7 +88,7 @@ img {
 }
 
 a {
-  color: var(--accent-gold);
+  color: inherit;
   text-decoration: none;
   transition: all 0.3s var(--ease-out-quart);
 }
@@ -116,7 +125,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: inherit;
   margin-bottom: 1rem;
   display: inline-flex;
   align-items: center;
@@ -136,13 +145,13 @@ a:hover {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text-primary);
+  color: inherit;
   margin-bottom: 1.5rem;
 }
 
 .section-title em {
   font-style: italic;
-  color: var(--accent-gold);
+  color: inherit;
 }
 
 /* ---------- Loading Screen ---------- */
@@ -150,7 +159,7 @@ a:hover {
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: var(--bg-primary);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,7 +182,7 @@ a:hover {
 
 .loader-bean::before,
 .loader-bean::after {
-  content: '🫘';
+  content: '';
   font-size: 2.5rem;
   position: absolute;
   animation: loaderPulse 1.4s ease-in-out infinite;
@@ -193,7 +202,7 @@ a:hover {
   font-size: 0.8rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: inherit;
   animation: loaderFade 1.4s ease-in-out infinite;
 }
 
@@ -213,12 +222,23 @@ a:hover {
   transition: all 0.5s var(--ease-out-expo);
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.9rem 0;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(200,164,78,0.2);
+  transition: all 0.5s var(--ease-out-expo);
+}
+
 .navbar.scrolled {
-  padding: 0.8rem 0;
-  background: rgba(10, 8, 6, 0.85);
-  backdrop-filter: blur(var(--blur-glass));
-  -webkit-backdrop-filter: blur(var(--blur-glass));
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 0.6rem 0;
+  background: var(--navy);
+  box-shadow: 0 4px 30px rgba(25,46,65,0.35);
+  border-bottom: 1px solid rgba(200,164,78,0.3);
 }
 
 .navbar .container {
@@ -238,26 +258,26 @@ a:hover {
 }
 
 .nav-logo-img {
-  height: 52px;
+  height: 64px;
   width: auto;
   object-fit: contain;
   transition: height 0.5s var(--ease-out-expo);
 }
 
 .navbar.scrolled .nav-logo-img {
-  height: 40px;
+  height: 48px;
 }
 
 .nav-logo-text {
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: inherit;
   letter-spacing: 0.02em;
 }
 
 .nav-logo-text span {
-  color: var(--accent-gold);
+  color: inherit;
 }
 
 .nav-links {
@@ -273,8 +293,10 @@ a:hover {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: var(--cream);
   position: relative;
+  opacity: 0.85;
+  transition: all 0.3s var(--ease-out-quart);
 }
 
 .nav-links a::after {
@@ -284,12 +306,13 @@ a:hover {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--accent-gold);
+  background: inherit;
   transition: width 0.4s var(--ease-out-expo);
 }
 
 .nav-links a:hover {
-  color: var(--accent-gold);
+  color: var(--gold);
+  opacity: 1;
 }
 
 .nav-links a:hover::after {
@@ -297,17 +320,18 @@ a:hover {
 }
 
 .nav-cta {
-  padding: 0.6rem 1.6rem !important;
-  border: 1px solid var(--accent-gold) !important;
+  padding: 0.5rem 1.4rem !important;
+  border: 1px solid var(--gold) !important;
   border-radius: 2px;
-  color: var(--accent-gold) !important;
+  color: var(--gold) !important;
   letter-spacing: 0.12em !important;
+  opacity: 1 !important;
   transition: all 0.4s var(--ease-out-expo) !important;
 }
 
 .nav-cta:hover {
-  background: var(--accent-gold) !important;
-  color: var(--bg-primary) !important;
+  background: var(--gold) !important;
+  color: var(--navy) !important;
 }
 
 .nav-cta::after {
@@ -328,7 +352,7 @@ a:hover {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--text-primary);
+  background: var(--cream);
   margin: 5px 0;
   transition: all 0.3s var(--ease-out-expo);
 }
@@ -422,7 +446,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: var(--cream);
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp 1s var(--ease-out-expo) 0.5s forwards;
@@ -447,13 +471,13 @@ a:hover {
 .hero-logo-img {
   width: clamp(280px, 45vw, 580px);
   height: auto;
-  filter: drop-shadow(0 0 60px rgba(212, 175, 55, 0.35))
+  filter: drop-shadow(0 0 60px rgba(25, 46, 65, 0.25))
           drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
   transition: filter 0.4s ease;
 }
 
 .hero-logo-img:hover {
-  filter: drop-shadow(0 0 80px rgba(212, 175, 55, 0.55))
+  filter: drop-shadow(0 0 80px rgba(25, 46, 65, 0.25))
           drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
 }
 
@@ -462,41 +486,15 @@ a:hover {
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  line-height: 1.05;
-  margin-bottom: 1.5rem;
+.hero-logo {
+  display: block;
+  max-width: 95%;
+  width: 800px;
+  height: auto;
+  margin: 4rem auto 2rem;
   opacity: 0;
   animation: fadeUp 1s var(--ease-out-expo) 0.7s forwards;
-}
-
-.hero-title .line-1 {
-  display: block;
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
-.hero-title .line-2 {
-  display: block;
-  font-size: clamp(3.5rem, 9vw, 8rem);
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 4px 40px rgba(212, 175, 55, 0.45));
-}
-
-.hero-title .line-3 {
-  display: block;
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-style: italic;
-  color: var(--text-primary);
-  margin-top: 0.25rem;
+  filter: drop-shadow(0 4px 40px rgba(25, 46, 65, 0.45));
 }
 
 .hero-location {
@@ -505,14 +503,14 @@ a:hover {
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: var(--cream);
   margin-bottom: 3rem;
   opacity: 0;
   animation: fadeUp 1s var(--ease-out-expo) 0.9s forwards;
 }
 
 .hero-location span {
-  color: var(--accent-gold);
+  color: var(--cream);
 }
 
 /* Coming Soon Badge */
@@ -521,9 +519,9 @@ a:hover {
   align-items: center;
   gap: 1rem;
   padding: 1rem 2.5rem;
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  border: 1px solid rgba(25, 46, 65, 0.25);
   border-radius: 50px;
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(25, 46, 65, 0.25);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   margin-bottom: 3rem;
@@ -534,14 +532,14 @@ a:hover {
 .coming-soon-badge .pulse {
   width: 8px;
   height: 8px;
-  background: var(--accent-gold);
+  background: inherit;
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
-  50%      { box-shadow: 0 0 0 14px rgba(212, 175, 55, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(25, 46, 65, 0.25); }
+  50%      { box-shadow: 0 0 0 14px rgba(25, 46, 65, 0.25); }
 }
 
 .coming-soon-badge span {
@@ -550,7 +548,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: var(--cream);
 }
 
 /* Countdown */
@@ -571,7 +569,7 @@ a:hover {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--cream);
   line-height: 1;
   display: block;
   min-width: 80px;
@@ -583,7 +581,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--cream);
   margin-top: 0.5rem;
   display: block;
 }
@@ -591,7 +589,7 @@ a:hover {
 .countdown-separator {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--accent-gold);
+  color: var(--cream);
   opacity: 0.5;
   align-self: flex-start;
   margin-top: 0.25rem;
@@ -627,7 +625,7 @@ a:hover {
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--cream);
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -635,7 +633,7 @@ a:hover {
 .scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, var(--accent-gold), transparent);
+  background: linear-gradient(to bottom, #ffffff, transparent);
   margin: 0 auto;
   animation: scrollPulse 2s ease-in-out infinite;
 }
@@ -678,21 +676,21 @@ a:hover {
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 35px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 35px rgba(25, 46, 65, 0.25);
   color: var(--bg-primary);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--accent-gold);
+  color: inherit;
   border: 1px solid rgba(200, 164, 78, 0.4);
 }
 
 .btn-outline:hover {
   background: rgba(200, 164, 78, 0.1);
-  border-color: var(--accent-gold);
+  border-color: inherit;
   transform: translateY(-2px);
-  color: var(--accent-gold);
+  color: inherit;
 }
 
 .btn-large {
@@ -742,7 +740,7 @@ a:hover {
   left: -20px;
   right: 20px;
   bottom: 20px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(25, 46, 65, 0.25);
   border-radius: 4px;
   z-index: -1;
 }
@@ -754,7 +752,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: rgba(212, 175, 55, 0.25);
+  background: rgba(25, 46, 65, 0.25);
   border-radius: 4px;
   overflow: hidden;
   z-index: 2;
@@ -772,7 +770,7 @@ a:hover {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--accent-gold);
+  color: inherit;
   line-height: 1;
 }
 
@@ -782,19 +780,19 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: inherit;
   margin-top: 0.4rem;
 }
 
 .about-text p {
-  color: var(--text-secondary);
+  color: inherit;
   font-size: 1.05rem;
   margin-bottom: 1.5rem;
 }
 
 .about-text p:first-of-type {
   font-size: 1.15rem;
-  color: var(--text-primary);
+  color: inherit;
 }
 
 .about-features {
@@ -809,15 +807,15 @@ a:hover {
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  background: rgba(212, 175, 55, 0.07);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  background: rgba(25, 46, 65, 0.25);
+  border: 1px solid rgba(25, 46, 65, 0.25);
   border-radius: 4px;
   transition: all 0.3s var(--ease-out-quart);
 }
 
 .about-feature:hover {
-  background: rgba(212, 175, 55, 0.15);
-  border-color: rgba(212, 175, 55, 0.35);
+  background: rgba(25, 46, 65, 0.25);
+  border-color: rgba(25, 46, 65, 0.25);
   transform: translateX(4px);
 }
 
@@ -829,7 +827,7 @@ a:hover {
   font-family: 'Outfit', sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: inherit;
 }
 
 /* =============================================
@@ -846,11 +844,11 @@ a:hover {
 .section-divider .line {
   width: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(25, 46, 65, 0.25), transparent);
 }
 
 .section-divider .icon {
-  color: var(--accent-gold);
+  color: inherit;
   font-size: 1.2rem;
   opacity: 0.5;
 }
@@ -862,6 +860,8 @@ a:hover {
   padding: var(--section-padding) 0;
   position: relative;
   overflow: hidden;
+  background: var(--navy);
+  color: var(--cream);
 }
 
 .experience-header {
@@ -871,7 +871,7 @@ a:hover {
 }
 
 .experience-header p {
-  color: var(--text-secondary);
+  color: inherit;
   font-size: 1.1rem;
 }
 
@@ -885,7 +885,8 @@ a:hover {
   position: relative;
   padding: 2.5rem 2rem;
   background: var(--bg-card);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  color: var(--navy);
+  border: 1px solid rgba(25, 46, 65, 0.15);
   border-radius: 4px;
   transition: all 0.5s var(--ease-out-expo);
   overflow: hidden;
@@ -906,8 +907,8 @@ a:hover {
 
 .experience-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(212, 175, 55, 0.3);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 175, 55, 0.08);
+  border-color: rgba(25, 46, 65, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 0 30px rgba(25, 46, 65, 0.06);
 }
 
 .experience-card:hover::before {
@@ -918,7 +919,7 @@ a:hover {
   font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
   font-weight: 700;
-  color: rgba(212, 175, 55, 0.3);
+  color: rgba(25, 46, 65, 0.15);
   line-height: 1;
   margin-bottom: 1.5rem;
 }
@@ -934,11 +935,11 @@ a:hover {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--text-primary);
+  color: inherit;
 }
 
 .experience-card p {
-  color: var(--text-secondary);
+  color: inherit;
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -958,7 +959,7 @@ a:hover {
 }
 
 .showcase-header p {
-  color: var(--text-secondary);
+  color: inherit;
   font-size: 1.1rem;
 }
 
@@ -1028,7 +1029,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: inherit;
 }
 
 /* =============================================
@@ -1072,7 +1073,7 @@ a:hover {
 }
 
 .halifax-content p {
-  color: var(--text-secondary);
+  color: inherit;
   font-size: 1.05rem;
   margin-bottom: 1.5rem;
 }
@@ -1089,14 +1090,14 @@ a:hover {
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: rgba(212, 175, 55, 0.06);
-  border-left: 3px solid var(--accent-gold);
+  background: rgba(25, 46, 65, 0.25);
+  border-left: 3px solid inherit;
   border-radius: 0 4px 4px 0;
   transition: all 0.3s var(--ease-out-quart);
 }
 
 .halifax-highlight:hover {
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(25, 46, 65, 0.25);
   transform: translateX(4px);
 }
 
@@ -1110,13 +1111,13 @@ a:hover {
   font-family: 'Outfit', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: inherit;
   margin-bottom: 0.25rem;
 }
 
 .halifax-highlight p {
   font-size: 0.9rem !important;
-  color: var(--text-muted) !important;
+  color: inherit !important;
   margin-bottom: 0 !important;
 }
 
@@ -1126,6 +1127,8 @@ a:hover {
 .signup {
   padding: var(--section-padding) 0;
   position: relative;
+  background: var(--navy);
+  color: var(--cream);
 }
 
 .signup-wrapper {
@@ -1140,8 +1143,8 @@ a:hover {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(196, 127, 44, 0.08) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+    linear-gradient(135deg, rgba(25, 46, 65, 0.25) 0%, rgba(196, 127, 44, 0.08) 100%);
+  border: 1px solid rgba(25, 46, 65, 0.25);
   border-radius: 8px;
 }
 
@@ -1152,7 +1155,7 @@ a:hover {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1), transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(25, 46, 65, 0.25), transparent 50%);
 }
 
 .signup-content {
@@ -1167,7 +1170,7 @@ a:hover {
 }
 
 .signup-content p {
-  color: var(--text-secondary);
+  color: inherit;
   font-size: 1.05rem;
   margin-bottom: 2.5rem;
 }
@@ -1182,10 +1185,10 @@ a:hover {
 .signup-form input[type="email"] {
   flex: 1;
   padding: 1rem 1.5rem;
-  background: rgba(10, 8, 6, 0.6);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: #ffffff;
+  border: 1px solid rgba(25, 46, 65, 0.4);
   border-radius: 2px;
-  color: var(--text-primary);
+  color: var(--navy);
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   outline: none;
@@ -1193,12 +1196,12 @@ a:hover {
 }
 
 .signup-form input[type="email"]::placeholder {
-  color: var(--text-muted);
+  color: rgba(25, 46, 65, 0.6);
 }
 
 .signup-form input[type="email"]:focus {
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  border-color: inherit;
+  box-shadow: 0 0 0 3px rgba(25, 46, 65, 0.25);
 }
 
 .signup-form button {
@@ -1208,7 +1211,7 @@ a:hover {
 .signup-note {
   font-family: 'Outfit', sans-serif;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: inherit;
   margin-top: 1.5rem;
   letter-spacing: 0.05em;
 }
@@ -1218,8 +1221,24 @@ a:hover {
    ============================================= */
 .footer {
   padding: 4rem 0 2rem;
-  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  background: var(--navy);
+  color: var(--cream);
+  border-top: 1px solid rgba(200,164,78,0.25);
 }
+
+.footer .footer-brand p,
+.footer .footer-links a,
+.footer .footer-bottom p,
+.footer .footer-title {
+  color: var(--cream);
+}
+
+.footer .footer-title {
+  color: #d4af37;
+}
+
+.footer .section-title,
+.footer .footer-brand p { color: var(--cream); }
 
 .footer-grid {
   display: grid;
@@ -1229,7 +1248,7 @@ a:hover {
 }
 
 .footer-brand p {
-  color: var(--text-muted);
+  color: inherit;
   font-size: 0.95rem;
   margin-top: 1rem;
   max-width: 300px;
@@ -1241,7 +1260,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: inherit;
   margin-bottom: 1.5rem;
 }
 
@@ -1253,13 +1272,13 @@ a:hover {
 }
 
 .footer-links a {
-  color: var(--text-muted);
+  color: inherit;
   font-size: 0.9rem;
   transition: all 0.3s;
 }
 
 .footer-links a:hover {
-  color: var(--accent-gold);
+  color: inherit;
   padding-left: 4px;
 }
 
@@ -1275,16 +1294,16 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(25, 46, 65, 0.25);
   border-radius: 50%;
-  color: var(--text-muted);
+  color: inherit;
   font-size: 1rem;
   transition: all 0.3s var(--ease-out-quart);
 }
 
 .footer-social a:hover {
-  background: var(--accent-gold);
-  border-color: var(--accent-gold);
+  background: inherit;
+  border-color: inherit;
   color: var(--bg-primary);
   transform: translateY(-3px);
 }
@@ -1294,12 +1313,12 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  border-top: 1px solid rgba(25, 46, 65, 0.25);
 }
 
 .footer-bottom p {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: inherit;
 }
 
 /* =============================================
@@ -1435,12 +1454,8 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-  .hero-title .line-2 {
-    font-size: 3rem;
-  }
-  
-  .hero-title .line-3 {
-    font-size: 1.6rem;
+  .hero-logo {
+    width: 450px;
   }
   
   .coming-soon-badge {
@@ -1506,7 +1521,7 @@ a:hover {
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: #111;
-  border: 2px solid var(--accent-gold);
+  border: 2px solid inherit;
   border-radius: 4px 15px 15px 4px;
   display: flex;
   justify-content: center;
@@ -1520,7 +1535,7 @@ a:hover {
 
 .book-logo {
   width: 80%;
-  filter: drop-shadow(0 0 15px rgba(212,175,55,0.4));
+  filter: drop-shadow(0 0 15px rgba(25, 46, 65, 0.25));
 }
 
 .book-page {
@@ -1570,7 +1585,7 @@ a:hover {
   background: rgba(10, 8, 6, 0.7);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(25, 46, 65, 0.25);
   border-radius: 12px;
   transform: translateY(50px);
   will-change: transform, opacity;
@@ -1578,3 +1593,91 @@ a:hover {
 
 .latte-layer { z-index: 2; }
 .croissant-layer { z-index: 1; }
+
+/* =============================================
+   SPONSORS
+   ============================================= */
+.sponsors {
+  padding: var(--section-padding) 0;
+  background: var(--bg-secondary);
+  color: var(--cream);
+  text-align: center;
+}
+
+.sponsors-header {
+  margin-bottom: 4rem;
+}
+
+.sponsors-tier {
+  margin-bottom: 4rem;
+}
+
+.sponsors-tier-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: inherit;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  position: relative;
+  display: inline-block;
+}
+
+.sponsors-tier-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--gradient-gold);
+}
+
+.sponsors-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.sponsor-card {
+  background: var(--bg-card);
+  color: var(--navy);
+  padding: 3rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+  border: 1px solid rgba(25, 46, 65, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 280px;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(25, 46, 65, 0.25);
+  border-color: rgba(25, 46, 65, 0.25);
+}
+
+.sponsor-logo {
+  max-width: 220px;
+  max-height: 100px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.sponsor-card:hover .sponsor-logo {
+  transform: scale(1.05);
+}
+
+.sponsor-info h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: inherit;
+  letter-spacing: 0.05em;
+}
